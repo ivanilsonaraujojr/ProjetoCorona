@@ -1,9 +1,17 @@
 /* Geral */
+:root{
+    --branco: white;
+    --preto: black;
+    --vermelho: red;
+}
+
 *{
-    padding:0;
-    box-sizing: inherit;
+    padding: 0;
     margin: 0;
+    box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
+    color: var(--branco);
+    text-align: center;
 }
 
 a{
@@ -13,9 +21,9 @@ a{
 ul{
     list-style: none;
 }
-body,html{
+
+body{/*Tem que escolher qual será referenciado, por que no final body e html sempre vão apontar pro mesmo lugar*/
     background: #3B0054;
-    width:100%;
 }
 
 hr{
@@ -24,7 +32,6 @@ hr{
 }
 
 .btn{
-    color: white;
     font-weight: bold;
     text-transform: uppercase;
     background: #3B0054;
@@ -32,156 +39,125 @@ hr{
     padding: 5px;  
     border-radius: 5px;
 }
-.center{
-    text-align: center;
-}
+/*De novo repetindo tag que pode simplemente ser aplicada nos elementos gerais*/
 
-.red{
-    background:red;
-}
+/*Nunca vi essa tag sendo usada, se for é melhor usar custom variable*/
 
-/* Topo Mobile */
+/*HEADER*/
 
 .topo{
-    display: flex;
-    position:fixed;
+    display: flex;/*Sitcky é melhor do que fixed por que toma um espaço melhor da tela fica mais bem aproveitado e não colide com os elemento a baixo*/
+    position: sticky;
+    top: 0;/*Sempre que definir Sticky tem que colocar onde ele começa, nesse caso, no topo (bem no comecinho)*/
     width:100%;
-    flex-wrap: wrap;
+    flex-flow: row wrap;/*flex-flow é o shortcut de f-direction e f-wrap*/
+    justify-content: space-around;/*Com justify-content é bem melhor pra tirar aquele tanto de "margin: 0 auto"; melhor*/
+    align-items: center;
     background-color:rgb(0, 0, 0);
+    height: 15%;/*Tamanho fixo pro header poder funcionar com propriedade em todos os dispositivos sem precisar mudar muito*/
 }
+
 .topo__logo{
-    display: flex;
+    display: inline-block;/*os elementos ocupam obrigatoriamente mais espaço no container, até preencher por completo (dependendo do tamanho de cada um*/
     font-family: 'Fredoka One', cursive;
     color:rgb(88, 78, 228);
     font-size: 1.8rem;
-    padding-left: 10px;
-    align-items:center;
-    margin: 0 auto;
 }
 
 .topo__logo__img{
     width:64px;
+    vertical-align: middle;/*Posto aqui para centralizar a imagem e o título*/
 }
 
 .topo__menu{
+    display: inline;
+}
+
+.topo__menu__item{
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
     text-transform: uppercase;
     font-stretch:2.5rem;
-    margin: 0 auto;
-    display: flex;
-    align-items:center;
-}
-
-.topo__menu__item{
-    padding: 0 0 10px 10px;
-}
-
-.topo__menu__item:last-child{
-    padding-right: 0;
-}
-.topo__menu__item a{
+    padding: 8px;
     color: white;
 }
 
-.topo__menu__item a:hover{
-    transition:0.3s ease-in;
+.topo__menu__item:hover{
+    transition: .3s ease-in;
     color: rgb(248, 0, 0);
 }
 
 /* Bloco*/
-.bloco {
-    padding-top: 100px;
-    min-height: 100%;
-    padding-bottom: 15px;
-}
+
+/*Acabamos de nos livrar de uma classe que não faz nada útil: ".bloco". Sabe aquele padding-top com 100px? Acabamos de resolver ele com o "position:Sticky"*/
 
 /*Sintomas*/
 .sintomas__titulo{
     color: white;
     font-size: 2.25rem;
     text-align: center;
-    margin-bottom: 50px;
     width: 100%;
 }
 
 .sintomas{
-    display:flex;
-    flex-wrap:wrap;
-    flex-direction:row;
-    justify-content:flex-start;
-    align-items:stretch;
+    max-height: 700px;
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 10px;
 }
 
-.sintomas__item--left{
-    order:1;
-    flex-basis:50%;
+.sintomas__grid__sintoma{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
 }
 
-.sintomas__item--right{
-    order:2;
-    flex-basis:50%;
-
+.sintomas__grid{
+    display: grid;/*Me livrei daquelas modifiers que estavam causando redundância*/
+    grid: repeat(2, 200px) / repeat(2, 50%);
 }
 
-.sintomas__item__titulo{
-    color:rgb(88, 88, 233);
-    font-size: 1.2rem;
-    text-align: center;
-}
-
-.sintomas__item__titulo--justify{
-    text-align: justify;
-    color: white ;
-}
+/*Me livrando também da classe "sintomas__item__titulo", muito repetitivo, e faz duas coisa que podem ser colocadas no reset*/
 
 .sintomas__item__img{
-    width:70%;
-    border-radius: 25px;
-    padding: 5px 0;
-    max-width: 430px;
-    min-width:70px;
+    width: 130px;
+    border-radius: 15px;
 }
 
-.sintomas__item__outros{
-    order: 3;
-    padding: 20px 25px;
-    justify-content: flex-start;
+.sintomas__outro__titulo, .sintomas__outro__lista-item{
+    text-align: left;
 }
 
 /*Teste Mobile*/
-.menu__antes{
-    margin: 0 auto;
-}
+/*Isso aqui nunca foi usado, você esqueceu de apagar*/
 .teste{
     background: white;
-    word-wrap: break-word;
+    padding: 10px;
 }
 
 .teste__antes__img{
-    width:85%;
+    width: 85%;
     border-radius: 25px;
     max-width: 630px;
-    margin-top:5px;
 }
 
 .teste__antes__titulo1{
-    color:red;
+    color: var(--vermelho);
     font-size: 2.25rem;
-    text-align: center;
 }
 .teste__antes__texto1{
-    text-align: center;
+    color: var(--preto);
     font-size:1.45rem;
     padding:5px;
 }
 .teste__antes__texto1--alert{
-    color: red;
+    color: var(--vermelho);
     font-weight: bold;
 }
+
 .teste__btn{
     cursor: pointer;
-    margin-top: 5px;
     font-size: 1.25rem;
 }
 
@@ -192,23 +168,34 @@ hr{
 .teste__titulo2{
     color:#3B0054;
     font-size: 1.5rem;
-    text-align: center;
+    padding: 10px;
 }
 
 .teste__pergunta{
     width: 95%;
     border: 1px solid #3B0054;
-    text-align: center;
     padding: 5px;
     font-size: 1.2rem;
-    margin:5px auto;
+    margin: 10px;
     border-radius: 5px;
+}
+
+.teste__pergunta p{
+    color: var(--preto);
 }
 
 .btnResposta{
     font-size: 1rem;
     text-align: center;
     margin: 5px;
+}
+
+.btnVoltar{
+    background: var(--vermelho);
+}
+
+label{
+    color: var(--preto);
 }
 
 .teste__resultado{
@@ -219,13 +206,11 @@ hr{
 .teste__resultado__titulo{
     color: rgb(39, 1, 56);
     font-size: 1.8rem;
-    text-align: center;
 }
 
 .teste__resultado__texto1{
-    color: black;
+    color: var(--preto);
     font-size: 1.5rem;
-    text-align: center;
     padding: 5px;
 }
 
@@ -273,6 +258,4 @@ hr{
     width: 85%;
     max-width: 350px;
 }
-
-
 /* Breakpoints */
