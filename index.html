@@ -12,9 +12,15 @@
 </head>
 <body>
     <header class="topo">
+<<<<<<< HEAD
         
         <div class="topo__logo">CoronaTeste<img src="https://img.icons8.com/nolan/64/coronavirus.png" class="topo__logo__img"/></div> <!--Depois você implementa um "back to the top" com js. Fica bem melhor do que inutilizar o logo deixando ele clicável-->
         
+=======
+
+        <div class="topo__logo">CoronaTeste<img src="https://img.icons8.com/nolan/64/coronavirus.png" class="topo__logo__img"/></div><!--Depois você implementa um "back to the top" com js. Fica bem melhor do que inutilizar o logo deixando ele clicável-->
+
+>>>>>>> d63e203d8e5642a84f407389234ce904b744ebda
         <div class="topo__menu"><!--Não vi necessidade para usar a lista, é só mais conteúdo que precisar ser estilizado individualmente-->
             <a href="#sintomas" class="topo__menu__item">Sintomas</a>
             <a href="#teste" class="topo__menu__item">Teste</a>
@@ -23,6 +29,7 @@
 
     </header>
 
+<<<<<<< HEAD
     <section id="sintomas" class="sintomas bloco">
 
         <h1 class="sintomas__titulo">Sintomas</h1>
@@ -50,13 +57,56 @@
                 <p>> Dores no corpo</p>
                 <p>> Coriza (corrimento nasal)</p>
             </div>
+=======
+    <section id="sintomas" class="sintomas"><!--Me livrei da classe="bloco"-->
+
+        <h1 class="sintomas__titulo">Sintomas</h1>
+
+        <div class="sintomas__grid"><!--Assim fica mais e deixa o código menos redundante-->
+            <article class="sintomas__grid__sintoma">
+                <img src="img/tosse.png" alt="Tosse" class="sintomas__item__img">
+                <h3 class="sintomas__item__titulo">Tosse</h3>
+            </article>
+
+            <article class="sintomas__grid__sintoma">
+                <img src="img/dordegarganta.png" alt="Dor de Garganta" class="sintomas__item__img">
+                <h3 class="sintomas__item__titulo">Dor de Garganta</h3>
+            </article>
+
+            <article class="sintomas__grid__sintoma">
+                <img src="img/febre.png" alt="Febre" class="sintomas__item__img">
+                <h3 class="sintomas__item__titulo">Febre</h3>
+            </article>
+
+            <article class="sintomas__grid__sintoma">
+                <img src="img/dificuldaderespirar.png" alt="Dificuldades respiratórias" class="sintomas__item__img">
+                <h3 class="sintomas__item__titulo">Dificuldades respiratórias</h3>
+            </article>
+        </div>
+
+        <div class="sintomas__outros">
+            <h1 class="sintomas__outro__titulo">Outros possíveis sintomas:</h1>
+            <ul class="sintomas__outro__lista">
+                <!-- Repetição exacerbada de classe que não faz nada aqui também-->
+                <li class="sintomas__outro__lista-item"> > Mal estar geral</li>
+                <li class="sintomas__outro__lista-item"> > Congestão nasal</li>
+                <li class="sintomas__outro__lista-item"> > Dores no corpo</li>
+                <li class="sintomas__outro__lista-item"> > Coriza (corrimento nasal)</li>
+            </ul>
+        </div>
+>>>>>>> d63e203d8e5642a84f407389234ce904b744ebda
     </section>
     
-    <section id="teste" class="teste bloco">
+    <section id="teste" class="teste">
     <div class="teste__antes"> <!--Esse menu aparece antes do usuario aceitar fazer o teste-->
+<<<<<<< HEAD
         <img src="img/coronavirus.jpg" alt="Foto do virús" class="teste__antes__img">
         
         <h1 class="teste__antes__titulo1">Sobre o CoronaTeste:</h1>
+=======
+    <img src="img/coronavirus.jpg" alt="Foto do virús" class="teste__antes__img"><!--Não entendi a necessidade daquela div aqui-->
+    <h1 class="teste__antes__titulo1">Sobre o CoronaTeste:</h1>
+>>>>>>> d63e203d8e5642a84f407389234ce904b744ebda
         <p class="teste__antes__texto1">Se você deseja detectar, se você foi infectado pelo covid-19 ou não,
             você está no lugar certo. Basta responder às perguntas e descobrir o resultado.<span class="teste__antes__texto1--alert"> Lembre-se de 
             que fiz isso para a minha pratica com programação e o resultado desse teste não deve ser levado 
@@ -68,8 +118,13 @@
     </div>
 
     <div class="teste__depois"> <!--Esse menu aparece depois do usuario aceitar fazer o teste-->
+<<<<<<< HEAD
             <input type="button" value="Voltar" class="btnVoltar teste__btn btn red">
         <h1 class="teste__titulo2">Responda o questionario a seguir</h1>
+=======
+            <input type="button" value="Voltar" class="btnVoltar teste__btn btn">
+       <h1 class="teste__titulo2">Responda o questionario a seguir</h1>
+>>>>>>> d63e203d8e5642a84f407389234ce904b744ebda
         <form name="teste__formulario" class="teste__formulario">
             <div class="teste__pergunta">
                 <p>1. Você esta sentindo febre(superior a 37,5 graus)?</p>
@@ -118,7 +173,11 @@
             <label for="teste__pergunta6">Não</label>
             <input type="radio" name="teste__pergunta6" autocomplete="off" value="Nao" class="btnResposta">
             </div>
+<<<<<<< HEAD
                
+=======
+
+>>>>>>> d63e203d8e5642a84f407389234ce904b744ebda
             <a href="#teste"><input type="button" name="btnEnviar" id="btnEnviar" value="Enviar as respostas" class="teste__btn btn"></a>
         </form>
     </div>
@@ -159,10 +218,6 @@
         <h3 class="servicos__dicas__item__texto">A forma mais eficaz de barrar o Covid-19 é o isolamento social!!</h3>
     </div>
     </section>
-
-    <footer class="rodape">
-        a
-    </footer>
 
     <script src="js/script.js"></script>
 </body>
