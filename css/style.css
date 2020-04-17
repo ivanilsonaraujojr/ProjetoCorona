@@ -1,9 +1,19 @@
 /* Geral */
+:root{
+    --branco: white;
+    --preto: black;
+    --roxinho: rgb(88, 78, 228);
+    --roxão: #3B0054;
+    --vermelho: red;
+}
+
 *{
-    padding:0;
-    box-sizing: inherit;
+    padding: 0;
     margin: 0;
+    box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
+    color: var(--branco);
+    text-align: center;
 }
 
 a{
@@ -13,9 +23,10 @@ a{
 ul{
     list-style: none;
 }
-body,html{
-    background: #3B0054;
-    width:100%;
+
+html{/*Tem que escolher qual será referenciado, por que no final body e html sempre vão apontar pro mesmo lugar*/
+    background: var(--roxão);
+    min-width: 306px;
 }
 
 hr{
@@ -24,93 +35,79 @@ hr{
 }
 
 .btn{
-    color: white;
     font-weight: bold;
     text-transform: uppercase;
-    background: #3B0054;
+    background: var(--roxão);
     border: none;
     padding: 5px;  
     border-radius: 5px;
-}
-.center{
-    text-align: center;
-}
-
-.red{
-    background:red;
 }
 
 /* Topo Mobile */
 
 .topo{
-    display: flex;
-    position:fixed;
+    display: flex;/*Sitcky é melhor do que fixed por que toma um espaço melhor da tela fica mais bem aproveitado e não colide com os elemento a baixo*/
+    position: sticky;
+    z-index: 1;
+    top: 0;/*Sempre que definir Sticky tem que colocar onde ele começa, nesse caso, no topo (bem no comecinho)*/
     width:100%;
-    flex-wrap: wrap;
-    background-color:rgb(0, 0, 0);
+    flex-flow: row wrap;/*flex-flow é o shortcut de f-direction e f-wrap*/
+    justify-content: space-around;/*Com justify-content é bem melhor pra tirar aquele tanto de "margin: 0 auto"; melhor*/
+    align-items: center;
+    background-color:var(--preto);
+    height: 15%;/*Tamanho fixo pro header poder funcionar com propriedade em todos os dispositivos sem precisar mudar muito*/
 }
+
 .topo__logo{
-    display: flex;
+    display: inline-block;/*os elementos ocupam obrigatoriamente mais espaço no container, até preencher por completo (dependendo do tamanho de cada um*/
     font-family: 'Fredoka One', cursive;
-    color:rgb(88, 78, 228);
+    color:var(--roxinho);
     font-size: 1.8rem;
-    padding-left: 10px;
-    align-items:center;
-    margin: 0 auto;
 }
 
 .topo__logo__img{
     width:64px;
+    vertical-align: middle;/*Posto aqui para centralizar a imagem e o título*/
 }
 
 .topo__menu{
+    display: inline;
+}
+
+.topo__menu__item{
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
     text-transform: uppercase;
     font-stretch:2.5rem;
-    margin: 0 auto;
-    display: flex;
-    align-items:center;
+    padding: 8px;
+    color: var(--branco);
 }
 
-.topo__menu__item{
-    padding: 0 0 10px 10px;
-}
-
-.topo__menu__item:last-child{
-    padding-right: 0;
-}
-.topo__menu__item a{
-    color: white;
-}
-
-.topo__menu__item a:hover{
-    transition:0.3s ease-in;
-    color: rgb(248, 0, 0);
+.topo__menu__item:hover{
+    transition: .3s ease-in;
+    color: var(--vermelho);
 }
 
 /* Bloco*/
 .bloco {
-    padding-top: 100px;
+    padding-top: 92px;
     min-height: 100%;
     padding-bottom: 15px;
 }
 
 /*Sintomas*/
 .sintomas__titulo{
-    color: white;
-    font-size: 2.25rem;
-    text-align: center;
-    margin-bottom: 50px;
+    color: var(--branco);
+    font-size: 3rem;
+    position: absolute;
+    top: 15%;
     width: 100%;
 }
 
 .sintomas{
     display:flex;
-    flex-wrap:wrap;
-    flex-direction:row;
+    flex-flow: row wrap;
     justify-content:flex-start;
-    align-items:stretch;
 }
 
 .sintomas__item--left{
@@ -125,20 +122,14 @@ hr{
 }
 
 .sintomas__item__titulo{
-    color:rgb(88, 88, 233);
+    color:var(--roxinho);
     font-size: 1.2rem;
-    text-align: center;
-}
-
-.sintomas__item__titulo--justify{
-    text-align: justify;
-    color: white ;
 }
 
 .sintomas__item__img{
     width:70%;
     border-radius: 25px;
-    padding: 5px 0;
+    margin: 5% 0;
     max-width: 430px;
     min-width:70px;
 }
@@ -146,42 +137,39 @@ hr{
 .sintomas__item__outros{
     order: 3;
     padding: 20px 25px;
-    justify-content: flex-start;
+}
+
+.sintomas__item__outros p{
+    text-align: justify;
+    color: var(--branco);
 }
 
 /*Teste Mobile*/
-.menu__antes{
-    margin: 0 auto;
-}
 .teste{
-    background: white;
-    word-wrap: break-word;
+    background: var(--branco);
 }
 
 .teste__antes__img{
     width:85%;
     border-radius: 25px;
     max-width: 630px;
-    margin-top:5px;
 }
 
 .teste__antes__titulo1{
-    color:red;
+    color: var(--vermelho);
     font-size: 2.25rem;
-    text-align: center;
 }
 .teste__antes__texto1{
-    text-align: center;
+    color: var(--preto);
     font-size:1.45rem;
     padding:5px;
 }
 .teste__antes__texto1--alert{
-    color: red;
+    color: var(--vermelho);
     font-weight: bold;
 }
 .teste__btn{
     cursor: pointer;
-    margin-top: 5px;
     font-size: 1.25rem;
 }
 
@@ -190,14 +178,14 @@ hr{
 }
 
 .teste__titulo2{
-    color:#3B0054;
+    color:var(--roxão);
     font-size: 1.5rem;
     text-align: center;
 }
 
 .teste__pergunta{
     width: 95%;
-    border: 1px solid #3B0054;
+    border: 1px solid var(--roxão);
     text-align: center;
     padding: 5px;
     font-size: 1.2rem;
@@ -205,9 +193,16 @@ hr{
     border-radius: 5px;
 }
 
+label{
+    color: var(--preto);
+}
+
+.teste__pergunta p{
+    color: var(--preto);
+}
+
 .btnResposta{
     font-size: 1rem;
-    text-align: center;
     margin: 5px;
 }
 
@@ -217,15 +212,13 @@ hr{
 }
 
 .teste__resultado__titulo{
-    color: rgb(39, 1, 56);
+    color: var(--roxão);
     font-size: 1.8rem;
-    text-align: center;
 }
 
 .teste__resultado__texto1{
-    color: black;
+    color: var(--preto);
     font-size: 1.5rem;
-    text-align: center;
     padding: 5px;
 }
 
@@ -238,12 +231,12 @@ hr{
 
 /*Serviços*/
 .servicos{
-    background:3B0054;
+    background:var(--roxão);
 }
 .servicos__titulo{
     color: white;
-    text-align: center;
-    font-size: 2.5rem;
+    font-size: 3rem;
+
 }
 
 .servicos__cabecalho{
@@ -256,6 +249,7 @@ hr{
 .servicos__dicas__item{
     background:white;
     margin: 0 auto;
+    margin-bottom: 2%;
     border-radius: 5px;
     width:90%;
     max-width: 600px;
@@ -264,14 +258,19 @@ hr{
 .servicos__dicas__item__subtitulo{
     text-align: center;
     text-transform: uppercase;
-    color:rgb(88, 88, 233);
+    color: var(--roxinho);
     font-size: 1.65rem;
     padding:5px;
 }
 
 .servicos__img{
     width: 85%;
-    max-width: 350px;
+    max-width: 250px;
+}
+
+.servicos__dicas__item__texto{
+    color: var(--preto);
+    padding-bottom: 2%;
 }
 
 
