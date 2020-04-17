@@ -1,2 +1,2 @@
 # ProjetoCorona
-Projeto desenvolvido para a pratica com o desenvolvimento web.
+Projeto para treinar desenvolvimento web
