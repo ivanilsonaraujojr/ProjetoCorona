@@ -12,157 +12,159 @@
 </head>
 <body>
     <header class="topo">
-        <a href="#" class="topo__logo">
-            CoronaTeste
-            <img src="https://img.icons8.com/nolan/64/coronavirus.png" class="topo__logo__img"/>
-        </a>
+        
+        <div class="topo__logo">CoronaTeste<img src="https://img.icons8.com/nolan/64/coronavirus.png" class="topo__logo__img"/></div> <!--Depois você implementa um "back to the top" com js. Fica bem melhor do que inutilizar o logo deixando ele clicável-->
+        
+        <div class="topo__menu"><!--Não vi necessidade para usar a lista, é só mais conteúdo que precisar ser estilizado individualmente-->
+            <a href="#sintomas" class="topo__menu__item">Sintomas</a>
+            <a href="#teste" class="topo__menu__item">Teste</a>
+            <a href="#servicos" class="topo__menu__item">Serviços</a>
+        </div>
 
-        <ul class="topo__menu">
-            <li class="topo__menu__item">
-                <a href="#sintomas">Sintomas</a>
-            </li>
-            <li class="topo__menu__item">
-                <a href="#teste">Teste</a>
-            </li>
-            <li class="topo__menu__item">
-                <a href="#servicos">Serviços</a>
-            </li>
-        </ul>
     </header>
 
-    <section id="sintomas" class="sintomas bloco">
+    <section id="sintomas" class="sintomas">
+
         <h1 class="sintomas__titulo">Sintomas</h1>
-            <div class="sintomas__item--left">
-                <div class="center">
+        
+            <div class="sintomas__item">
                     <img src="img/tosse.png" alt="Tosse" class="sintomas__item__img">
-                </div>
                 <h3 class="sintomas__item__titulo">Tosse</h3>
             </div>
-            <div class="sintomas__item--right">
-                <div class="center">
+            <div class="sintomas__item">
                     <img src="img/febre.png" alt="Febre" class="sintomas__item__img">
-                </div>
                 <h3 class="sintomas__item__titulo">Febre</h3>
             </div>
-            <div class="sintomas__item--left">
-                <div class="center">
+            <div class="sintomas__item">
                     <img src="img/dordegarganta.png" alt="Dor de Garganta" class="sintomas__item__img">
-                </div>
                 <h3 class="sintomas__item__titulo">Dor de Garganta</h3>
             </div>
-            <div class="sintomas__item--right">
-                <div class="center">
+            <div class="sintomas__item">
                     <img src="img/dificuldaderespirar.png" alt="Dor de Garganta" class="sintomas__item__img">
-                </div>
                 <h3 class="sintomas__item__titulo">Dificuldade para respirar</h3>
             </div>
             <div class="sintomas__item__outros">
                 <h1 class="sintomas__item__titulo">Outros possíveis sintomas:</h1>
-                <ul>
-                    <li class="sintomas__item__titulo sintomas__item__titulo--justify">> Mal estar geral</li>
-                    <li class="sintomas__item__titulo sintomas__item__titulo--justify">> Congestão nasal</li>
-                    <li class="sintomas__item__titulo sintomas__item__titulo--justify">> Dores no corpo</li>
-                    <li class="sintomas__item__titulo sintomas__item__titulo--justify">> Coriza (corrimento nasal)</li>
-                </ul>
+                <p>> Mal estar geral</p>
+                <p>> Congestão nasal</p>
+                <p>> Dores no corpo</p>
+                <p>> Coriza (corrimento nasal)</p>
             </div>
     </section>
     
     <section id="teste" class="teste bloco">
     <div class="teste__antes"> <!--Esse menu aparece antes do usuario aceitar fazer o teste-->
-        <div class="center">
-            <img src="img/coronavirus.jpg" alt="Foto do virús" class="teste__antes__img">
-        </div>
-            <h1 class="teste__antes__titulo1">Sobre o CoronaTeste:</h1>
+        <img src="img/coronavirus.jpg" alt="Foto do virús" class="teste__antes__img">
+        
+        <h1 class="teste__antes__titulo1">Sobre o CoronaTeste:</h1>
         <p class="teste__antes__texto1">Se você deseja detectar, se você foi infectado pelo covid-19 ou não,
             você está no lugar certo. Basta responder às perguntas e descobrir o resultado.<span class="teste__antes__texto1--alert"> Lembre-se de 
             que fiz isso para a minha pratica com programação e o resultado desse teste não deve ser levado 
             a sério.</span>
         </p>
         
-        <div class="center">
              <a href="#teste"><input type="reset" name="btnComecar" value="Aperte aqui para começar" id="btnComecar" class="teste__btn btn"></a>
-        </div>
 
     </div>
 
     <div class="teste__depois"> <!--Esse menu aparece depois do usuario aceitar fazer o teste-->
-        <div class="center">
-            <input type="button" value="Voltar" class="btnVoltar teste__btn btn red">
-        </div>
-       <h1 class="teste__titulo2">Responda o questionario a seguir</h1>
+            <input type="button" value="Voltar" class="btnVoltar teste__btn btn btn--red">
+        <h1 class="teste__titulo2">Responda o questionario a seguir</h1>
         <form name="teste__formulario" class="teste__formulario">
             <div class="teste__pergunta">
-                <p>1. Você esta sentindo febre(superior a 37,5 graus)?</p >
-            <input type="radio" name="teste__pergunta1" autocomplete="off" value="Sim" class="btnResposta">Sim
-            <input type="radio" name="teste__pergunta1" autocomplete="off" value="Nao" class="btnResposta">Não
+                <p>1. Você esta sentindo febre(superior a 37,5 graus)?</p>
+            <label for="teste__pergunta1">Sim</label>
+            <input type="radio" name="teste__pergunta1" autocomplete="off" value="Sim" class="btnResposta">
+            <label for="teste__pergunta1">Não</label>
+            <input type="radio" name="teste__pergunta1" autocomplete="off" value="Nao" class="btnResposta">
             </div>
 
             <div class="teste__pergunta">
                 <p>2. Você tem dificuldade para respirar?</p >
-            <input type="radio" name="teste__pergunta2" autocomplete="off" value="Sim" class="btnResposta">Sim
-            <input type="radio" name="teste__pergunta2" autocomplete="off" value="Nao" class="btnResposta">Não
+            <label for="teste__pergunta2">Sim</label>
+            <input type="radio" name="teste__pergunta2" autocomplete="off" value="Sim" class="btnResposta">
+            <label for="teste__pergunta2">Não</label>
+            <input type="radio" name="teste__pergunta2" autocomplete="off" value="Nao" class="btnResposta">
             </div>
 
             <div class="teste__pergunta">
                 <p>3. Você costuma se sentir cansado, mesmo que não faça nada?</p >
-            <input type="radio" name="teste__pergunta3" autocomplete="off" value="Sim" class="btnResposta">Sim
-            <input type="radio" name="teste__pergunta3" autocomplete="off" value="Nao" class="btnResposta">Não
+            <label for="teste__pergunta">Sim</label>
+            <input type="radio" name="teste__pergunta3" autocomplete="off" value="Sim" class="btnResposta">
+            <label for="teste__pergunta3">Não</label>
+            <input type="radio" name="teste__pergunta3" autocomplete="off" value="Nao" class="btnResposta">
             </div>
 
             <div class="teste__pergunta">
                 <p>4. Você está sentindo algumas dores musculares?</p >
-            <input type="radio" name="teste__pergunta4" autocomplete="off" value="Sim" class="btnResposta">Sim
-            <input type="radio" name="teste__pergunta4" autocomplete="off" value="Nao" class="btnResposta">Não
+            <label for="teste__pergunta4">Sim</label>
+            <input type="radio" name="teste__pergunta4" autocomplete="off" value="Sim" class="btnResposta">
+            <label for="teste__pergunta4">Não</label>
+            <input type="radio" name="teste__pergunta4" autocomplete="off" value="Nao" class="btnResposta">
             </div>
 
             <div class="teste__pergunta">
-                <p>5. Você esta tossindo frequentemente?</p >
-            <input type="radio" name="teste__pergunta5" autocomplete="off" value="Sim" class="btnResposta">Sim
-            <input type="radio" name="teste__pergunta5" autocomplete="off" value="Nao" class="btnResposta">Não
+                <p>5. Você esta tossindo frequentemente?</p>
+            <label for="teste__pergunta5">Sim</label>
+            <input type="radio" name="teste__pergunta5" autocomplete="off" value="Sim" class="btnResposta">
+            <label for="teste__pergunta5">Não</label>
+            <input type="radio" name="teste__pergunta5" autocomplete="off" value="Nao" class="btnResposta">
             </div>
 
             <div class="teste__pergunta">
                 <p>6. Você tem dor de garganta?</p >
-            <input type="radio" name="teste__pergunta6" autocomplete="off" value="Sim" class="btnResposta">Sim
-            <input type="radio" name="teste__pergunta6" autocomplete="off" value="Nao" class="btnResposta">Não
+            <label for="teste__pergunta6">Sim</label>
+            <input type="radio" name="teste__pergunta6" autocomplete="off" value="Sim" class="btnResposta">
+            <label for="teste__pergunta6">Não</label>
+            <input type="radio" name="teste__pergunta6" autocomplete="off" value="Nao" class="btnResposta">
             </div>
-
-            <div class="center">
-               <a href="#teste"><input type="button" name="btnEnviar" id="btnEnviar" value="Enviar as respostas" class="teste__btn btn"></a>
-            </div>
+               
+            <a href="#teste"><input type="button" name="btnEnviar" id="btnEnviar" value="Enviar as respostas" class="teste__btn btn"></a>
         </form>
     </div>
 
     <div class="teste__resultado"> <!--Esse menu aparece depois do usuario responder o formulario do teste-->
-        <div class="center">
-            <a href="#teste"><input type="button" value="Refazer teste" class="btnVoltar__2 teste__btn btn red"></a>
-        </div>
+            <a href="#teste"><input type="button" value="Refazer teste" class="btnVoltar__2 teste__btn btn btn--red"></a>
         <h1 class="teste__resultado__titulo">Resultado do teste: </h1>
         <p class="teste__resultado__texto1" id="res1"></p>
         <p class="teste__resultado__texto1" id="res2"></p>
         <p class="teste__resultado__texto1">Se precisar tirar qualquer dúvida, ligue para o Disque Saúde, pelo número 136 
         – profissionais fazem o atendimento, dando orientações sem que o paciente precise se deslocar.</p><hr>
-        <div class="center">
             <img src="img/stayhome.png" alt="Fique em casa" class="teste__resultado__img">
-        </div>
     </div>
     </section>
 
 
-    <section id="servicos" class="servicos bloco">
+    <section id="servicos" class="servicos">
         <h1 class="servicos__titulo">Serviços</h1>
-        <h2 class="servicos__cabecalho">> Dicas:</h2>
+        <h2 class="servicos__cabecalho">Orientações:</h2>
+    <div class="servicos__dicas">
     <div class="servicos__dicas__item">
         <h3 class="servicos__dicas__item__subtitulo">Lave as mãos</h3>
-        <div class="center">
-            <img src="img/lavarasmaos.png" alt="Lave bem as mãos" class="servicos__img">
-        </div>
-        <h3 class="servicos"></h3>
+        <img src="img/lavarasmaos.png" alt="Lave bem as mãos" class="servicos__img">
+        <h3 class="servicos__dicas__item__texto">A lavagem frequente das mãos é a principal recomendação para se prevenir.</h3>
+    </div>
+    <div class="servicos__dicas__item">
+        <h3 class="servicos__dicas__item__subtitulo">Evite contatos físicos</h3>
+        <img src="img/evitarcontatofisico.jpg" alt="Evite contatos físicos" class="servicos__img">
+        <h3 class="servicos__dicas__item__texto">Vamos nos previnir, evite contato físico, principalmente com pessoas do grupo de risco!</h3>
+    </div>
+    <div class="servicos__dicas__item">
+        <h3 class="servicos__dicas__item__subtitulo">Use álcool em gel</h3>
+        <img src="img/alcoolemgel.png" alt="Use alcool em gel" class="servicos__img">
+        <h3 class="servicos__dicas__item__texto">Quando nao puder lavar as mãos com água e sabão, faça o uso do álcool em gel para higienizar as suas mãos.</h3>
+    </div>
+    <div class="servicos__dicas__item">
+        <h3 class="servicos__dicas__item__subtitulo">fique em casa!!</h3>
+        <img src="img/fiqueemcasa.png" alt="Fique em casa" class="servicos__img">
+        <h3 class="servicos__dicas__item__texto">A forma mais eficaz de barrar o Covid-19 é o isolamento social!!</h3>
+    </div>
     </div>
     </section>
 
     <footer class="rodape">
-        a
+        <a href="#sintomas" class="topo__menu__item">Ir para o topo</a>
+        <p class="rodape__texto">QuebradaDev 2020</p>
     </footer>
 
     <script src="js/script.js"></script>

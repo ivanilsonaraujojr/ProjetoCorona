@@ -1,9 +1,19 @@
 /* Geral */
+:root{
+    --branco: white;
+    --preto: black;
+    --roxinho: rgb(88, 78, 228);
+    --roxão: #3B0054;
+    --vermelho: red;
+}
+
 *{
-    padding:0;
-    box-sizing: inherit;
+    padding: 0;
     margin: 0;
+    box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
+    color: var(--branco);
+    text-align: center;
 }
 
 a{
@@ -13,9 +23,10 @@ a{
 ul{
     list-style: none;
 }
-body,html{
-    background: #3B0054;
-    width:100%;
+
+html{/*Tem que escolher qual será referenciado, por que no final body e html sempre vão apontar pro mesmo lugar*/
+    background: var(--roxão);
+    min-width: 306px;
 }
 
 hr{
@@ -24,69 +35,62 @@ hr{
 }
 
 .btn{
-    color: white;
     font-weight: bold;
     text-transform: uppercase;
-    background: #3B0054;
+    background: var(--roxão);
     border: none;
     padding: 5px;  
     border-radius: 5px;
 }
-.center{
-    text-align: center;
-}
 
-.red{
-    background:red;
+.btn--red{
+    background: var(--vermelho);
 }
 
 /* Topo Mobile */
 
 .topo{
-    display: flex;
-    position:fixed;
+    display: flex;/*Sitcky é melhor do que fixed por que toma um espaço melhor da tela fica mais bem aproveitado e não colide com os elemento a baixo*/
+    position: sticky;
+    z-index: 1;
+    top: 0;/*Sempre que definir Sticky tem que colocar onde ele começa, nesse caso, no topo (bem no comecinho)*/
     width:100%;
-    flex-wrap: wrap;
-    background-color:rgb(0, 0, 0);
+    flex-flow: row wrap;/*flex-flow é o shortcut de f-direction e f-wrap*/
+    justify-content: space-around;/*Com justify-content é bem melhor pra tirar aquele tanto de "margin: 0 auto"; melhor*/
+    align-items: center;
+    background-color:var(--preto);
+    height: 15%;/*Tamanho fixo pro header poder funcionar com propriedade em todos os dispositivos sem precisar mudar muito*/
 }
+
 .topo__logo{
-    display: flex;
+    display: inline-block;/*os elementos ocupam obrigatoriamente mais espaço no container, até preencher por completo (dependendo do tamanho de cada um*/
     font-family: 'Fredoka One', cursive;
-    color:rgb(88, 78, 228);
+    color:var(--roxinho);
     font-size: 1.8rem;
-    padding-left: 10px;
-    align-items:center;
-    margin: 0 auto;
 }
 
 .topo__logo__img{
     width:64px;
+    vertical-align: middle;/*Posto aqui para centralizar a imagem e o título*/
 }
 
 .topo__menu{
+    display: inline;
+    padding-bottom: 10px;
+}
+
+.topo__menu__item{
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
     text-transform: uppercase;
     font-stretch:2.5rem;
-    margin: 0 auto;
-    display: flex;
-    align-items:center;
+    padding: 8px;
+    color: var(--branco);
 }
 
-.topo__menu__item{
-    padding: 0 0 10px 10px;
-}
-
-.topo__menu__item:last-child{
-    padding-right: 0;
-}
-.topo__menu__item a{
-    color: white;
-}
-
-.topo__menu__item a:hover{
-    transition:0.3s ease-in;
-    color: rgb(248, 0, 0);
+.topo__menu__item:hover{
+    transition: .3s ease-in;
+    color: var(--vermelho);
 }
 
 /* Bloco*/
@@ -95,93 +99,75 @@ hr{
     min-height: 100%;
     padding-bottom: 15px;
 }
-
 /*Sintomas*/
 .sintomas__titulo{
-    color: white;
-    font-size: 2.25rem;
-    text-align: center;
-    margin-bottom: 50px;
+    color: var(--branco);
+    font-size: 3rem;
     width: 100%;
 }
 
 .sintomas{
     display:flex;
-    flex-wrap:wrap;
-    flex-direction:row;
-    justify-content:flex-start;
-    align-items:stretch;
+    flex-flow: row wrap;
+    justify-content:center;
 }
 
-.sintomas__item--left{
-    order:1;
-    flex-basis:50%;
-}
-
-.sintomas__item--right{
-    order:2;
-    flex-basis:50%;
-
+.sintomas__item{
+    border-radius: 5px;
+    margin: 0 2%;
+    width:100%;
+    max-width: 480px;
 }
 
 .sintomas__item__titulo{
-    color:rgb(88, 88, 233);
+    color:var(--roxinho);
     font-size: 1.2rem;
-    text-align: center;
-}
-
-.sintomas__item__titulo--justify{
-    text-align: justify;
-    color: white ;
 }
 
 .sintomas__item__img{
     width:70%;
     border-radius: 25px;
-    padding: 5px 0;
-    max-width: 430px;
+    margin: 2% 0;
+    max-width: 365px;
     min-width:70px;
 }
 
 .sintomas__item__outros{
-    order: 3;
-    padding: 20px 25px;
-    justify-content: flex-start;
+    margin-right: auto;
+    padding: 20px 30px;
+}
+
+.sintomas__item__outros p{
+    text-align: justify;
+    color: var(--branco);
 }
 
 /*Teste Mobile*/
-.menu__antes{
-    margin: 0 auto;
-}
 .teste{
-    background: white;
-    word-wrap: break-word;
+    background: var(--branco);
 }
 
 .teste__antes__img{
     width:85%;
     border-radius: 25px;
     max-width: 630px;
-    margin-top:5px;
 }
 
 .teste__antes__titulo1{
-    color:red;
+    color: var(--vermelho);
     font-size: 2.25rem;
-    text-align: center;
 }
 .teste__antes__texto1{
-    text-align: center;
+    color: var(--preto);
     font-size:1.45rem;
     padding:5px;
 }
 .teste__antes__texto1--alert{
-    color: red;
+    color: var(--vermelho);
     font-weight: bold;
 }
 .teste__btn{
     cursor: pointer;
-    margin-top: 5px;
     font-size: 1.25rem;
 }
 
@@ -190,24 +176,30 @@ hr{
 }
 
 .teste__titulo2{
-    color:#3B0054;
+    color:var(--roxão);
     font-size: 1.5rem;
-    text-align: center;
 }
 
 .teste__pergunta{
     width: 95%;
-    border: 1px solid #3B0054;
-    text-align: center;
+    border: 1px solid var(--roxão);
     padding: 5px;
     font-size: 1.2rem;
     margin:5px auto;
     border-radius: 5px;
 }
 
+label{
+    color: var(--preto);
+}
+
+.teste__pergunta p{
+    color: var(--preto);
+}
+
 .btnResposta{
+    cursor:pointer;
     font-size: 1rem;
-    text-align: center;
     margin: 5px;
 }
 
@@ -217,15 +209,13 @@ hr{
 }
 
 .teste__resultado__titulo{
-    color: rgb(39, 1, 56);
+    color: var(--roxão);
     font-size: 1.8rem;
-    text-align: center;
 }
 
 .teste__resultado__texto1{
-    color: black;
+    color: var(--preto);
     font-size: 1.5rem;
-    text-align: center;
     padding: 5px;
 }
 
@@ -238,41 +228,171 @@ hr{
 
 /*Serviços*/
 .servicos{
-    background:3B0054;
+    background:var(--roxão);
 }
 .servicos__titulo{
     color: white;
-    text-align: center;
-    font-size: 2.5rem;
+    font-size: 3rem;
+
 }
 
 .servicos__cabecalho{
     color: rgb(255, 255, 255);
-    text-align: center;
     font-size: 2rem;
     padding: 10px;
 }
 
+.servicos__dicas{
+    display:flex;
+    flex-flow: row wrap;
+    justify-content:center;
+}
+
 .servicos__dicas__item{
     background:white;
-    margin: 0 auto;
     border-radius: 5px;
-    width:90%;
-    max-width: 600px;
+    margin: 2% 2%;
+    width:100%;
+    max-width: 480px;
 }
 
 .servicos__dicas__item__subtitulo{
-    text-align: center;
     text-transform: uppercase;
-    color:rgb(88, 88, 233);
+    color: var(--roxinho);
     font-size: 1.65rem;
-    padding:5px;
+    padding:2%;
 }
 
 .servicos__img{
     width: 85%;
-    max-width: 350px;
+    min-height: 250px;
+    max-width: 250px;
+}
+
+.servicos__dicas__item__texto{
+    color: var(--preto);
+    padding: 2%;
+}
+
+
+/*Rodapé*/
+.rodape{
+    background: var(--preto)
+}
+
+.rodape__texto{
+    font-size: 1.25rem;
+    font-weight: bold;
+    padding: 1%;
+}
+
+.rodape a{
+    font-weight: bold;
+    color: var(--roxinho);
 }
 
 
 /* Breakpoints */
+
+/*TABLET*/
+@media (min-width: 600px){
+.topo__menu__item {
+    font-size: 1.15rem;
+}
+.topo__logo {
+    font-size: 2.1rem;
+}
+.sintomas__titulo {
+    font-size: 3.8rem;
+}
+.sintomas__item__titulo {
+    font-size: 1.55rem;
+}
+.sintomas__item__outros p {
+    font-size: 1.15rem;
+}
+.teste__antes__titulo1 {
+    font-size: 2.6rem;
+}
+.teste__antes__texto1 {
+    font-size: 1.55rem;
+}
+.teste__btn {
+    font-size: 1.4rem;
+}
+.servicos__titulo {
+    font-size: 3.8rem;
+}
+.servicos__cabecalho {
+    font-size: 2.15rem;
+}
+.servicos__dicas__item__subtitulo {
+    font-size: 1.8rem;
+}
+.servicos__dicas__item__texto {
+    font-size: 1.4rem;
+}
+.rodape a {
+    font-size: 1.35rem;
+}
+.rodape__texto {
+    font-size: 1.5rem;
+}
+}
+/*TABLET MAIORES*/
+@media (min-width: 900px){
+    .topo{
+        justify-content:space-between;
+    }
+    .topo__menu{
+        margin-right: 5%;
+    }
+    .topo__menu__item {
+        font-size: 1.3rem;
+        padding-right:20px;
+    }
+    .topo__menu__item:last-child {
+        padding-right:0;
+    }
+    .topo__logo {
+        font-size: 2.4rem;
+        margin-left:5%;
+    }
+    .sintomas__titulo {
+        font-size: 4.1rem;
+    }
+    .sintomas__item__titulo {
+        font-size: 2rem;
+    }
+    .sintomas__item__outros p {
+        font-size: 1.45rem;
+    }
+    .teste__antes__titulo1 {
+        font-size: 3rem;
+    }
+    .teste__antes__texto1 {
+        font-size: 1.8rem;
+    }
+    .teste__btn {
+        font-size: 1.7rem;
+    }
+    .servicos__titulo {
+        font-size: 4rem;
+    }
+    .servicos__cabecalho {
+        font-size: 2.30rem;
+    }
+    .servicos__dicas__item__subtitulo {
+        font-size: 2rem;
+    }
+    .servicos__dicas__item__texto {
+        font-size: 1.65rem;
+    }
+    .rodape a {
+        font-size: 1.45rem;
+    }
+    .rodape__texto {
+        font-size: 2rem;
+    }
+    }
+    
