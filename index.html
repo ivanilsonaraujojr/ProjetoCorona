@@ -23,23 +23,23 @@
 
     </header>
 
-    <section id="sintomas" class="sintomas bloco">
+    <section id="sintomas" class="sintomas">
 
         <h1 class="sintomas__titulo">Sintomas</h1>
         
-            <div class="sintomas__item--left">
+            <div class="sintomas__item">
                     <img src="img/tosse.png" alt="Tosse" class="sintomas__item__img">
                 <h3 class="sintomas__item__titulo">Tosse</h3>
             </div>
-            <div class="sintomas__item--right">
+            <div class="sintomas__item">
                     <img src="img/febre.png" alt="Febre" class="sintomas__item__img">
                 <h3 class="sintomas__item__titulo">Febre</h3>
             </div>
-            <div class="sintomas__item--left">
+            <div class="sintomas__item">
                     <img src="img/dordegarganta.png" alt="Dor de Garganta" class="sintomas__item__img">
                 <h3 class="sintomas__item__titulo">Dor de Garganta</h3>
             </div>
-            <div class="sintomas__item--right">
+            <div class="sintomas__item">
                     <img src="img/dificuldaderespirar.png" alt="Dor de Garganta" class="sintomas__item__img">
                 <h3 class="sintomas__item__titulo">Dificuldade para respirar</h3>
             </div>
@@ -68,7 +68,7 @@
     </div>
 
     <div class="teste__depois"> <!--Esse menu aparece depois do usuario aceitar fazer o teste-->
-            <input type="button" value="Voltar" class="btnVoltar teste__btn btn red">
+            <input type="button" value="Voltar" class="btnVoltar teste__btn btn btn--red">
         <h1 class="teste__titulo2">Responda o questionario a seguir</h1>
         <form name="teste__formulario" class="teste__formulario">
             <div class="teste__pergunta">
@@ -124,7 +124,7 @@
     </div>
 
     <div class="teste__resultado"> <!--Esse menu aparece depois do usuario responder o formulario do teste-->
-            <a href="#teste"><input type="button" value="Refazer teste" class="btnVoltar__2 teste__btn btn red"></a>
+            <a href="#teste"><input type="button" value="Refazer teste" class="btnVoltar__2 teste__btn btn btn--red"></a>
         <h1 class="teste__resultado__titulo">Resultado do teste: </h1>
         <p class="teste__resultado__texto1" id="res1"></p>
         <p class="teste__resultado__texto1" id="res2"></p>
@@ -135,9 +135,10 @@
     </section>
 
 
-    <section id="servicos" class="servicos bloco">
+    <section id="servicos" class="servicos">
         <h1 class="servicos__titulo">Serviços</h1>
-        <h2 class="servicos__cabecalho">> Dicas:</h2>
+        <h2 class="servicos__cabecalho">Orientações:</h2>
+    <div class="servicos__dicas">
     <div class="servicos__dicas__item">
         <h3 class="servicos__dicas__item__subtitulo">Lave as mãos</h3>
         <img src="img/lavarasmaos.png" alt="Lave bem as mãos" class="servicos__img">
@@ -151,17 +152,19 @@
     <div class="servicos__dicas__item">
         <h3 class="servicos__dicas__item__subtitulo">Use álcool em gel</h3>
         <img src="img/alcoolemgel.png" alt="Use alcool em gel" class="servicos__img">
-        <h3 class="servicos__dicas__item__texto">Quando nao puder lavar as mãos com agua e sabão, faça o uso do álcool em gel para higienizar as suas mãos.</h3>
+        <h3 class="servicos__dicas__item__texto">Quando nao puder lavar as mãos com água e sabão, faça o uso do álcool em gel para higienizar as suas mãos.</h3>
     </div>
     <div class="servicos__dicas__item">
         <h3 class="servicos__dicas__item__subtitulo">fique em casa!!</h3>
         <img src="img/fiqueemcasa.png" alt="Fique em casa" class="servicos__img">
         <h3 class="servicos__dicas__item__texto">A forma mais eficaz de barrar o Covid-19 é o isolamento social!!</h3>
     </div>
+    </div>
     </section>
 
     <footer class="rodape">
-        a
+        <a href="#sintomas" class="topo__menu__item">Ir para o topo</a>
+        <p class="rodape__texto">QuebradaDev 2020</p>
     </footer>
 
     <script src="js/script.js"></script>

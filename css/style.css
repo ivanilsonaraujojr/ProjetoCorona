@@ -43,6 +43,10 @@ hr{
     border-radius: 5px;
 }
 
+.btn--red{
+    background: var(--vermelho);
+}
+
 /* Topo Mobile */
 
 .topo{
@@ -72,6 +76,7 @@ hr{
 
 .topo__menu{
     display: inline;
+    padding-bottom: 10px;
 }
 
 .topo__menu__item{
@@ -90,35 +95,28 @@ hr{
 
 /* Bloco*/
 .bloco {
-    padding-top: 92px;
+    padding-top: 100px;
     min-height: 100%;
     padding-bottom: 15px;
 }
-
 /*Sintomas*/
 .sintomas__titulo{
     color: var(--branco);
     font-size: 3rem;
-    position: absolute;
-    top: 15%;
     width: 100%;
 }
 
 .sintomas{
     display:flex;
     flex-flow: row wrap;
-    justify-content:flex-start;
+    justify-content:center;
 }
 
-.sintomas__item--left{
-    order:1;
-    flex-basis:50%;
-}
-
-.sintomas__item--right{
-    order:2;
-    flex-basis:50%;
-
+.sintomas__item{
+    border-radius: 5px;
+    margin: 0 2%;
+    width:100%;
+    max-width: 480px;
 }
 
 .sintomas__item__titulo{
@@ -129,14 +127,14 @@ hr{
 .sintomas__item__img{
     width:70%;
     border-radius: 25px;
-    margin: 5% 0;
-    max-width: 430px;
+    margin: 2% 0;
+    max-width: 365px;
     min-width:70px;
 }
 
 .sintomas__item__outros{
-    order: 3;
-    padding: 20px 25px;
+    margin-right: auto;
+    padding: 20px 30px;
 }
 
 .sintomas__item__outros p{
@@ -180,13 +178,11 @@ hr{
 .teste__titulo2{
     color:var(--roxão);
     font-size: 1.5rem;
-    text-align: center;
 }
 
 .teste__pergunta{
     width: 95%;
     border: 1px solid var(--roxão);
-    text-align: center;
     padding: 5px;
     font-size: 1.2rem;
     margin:5px auto;
@@ -202,6 +198,7 @@ label{
 }
 
 .btnResposta{
+    cursor:pointer;
     font-size: 1rem;
     margin: 5px;
 }
@@ -241,37 +238,161 @@ label{
 
 .servicos__cabecalho{
     color: rgb(255, 255, 255);
-    text-align: center;
     font-size: 2rem;
     padding: 10px;
 }
 
+.servicos__dicas{
+    display:flex;
+    flex-flow: row wrap;
+    justify-content:center;
+}
+
 .servicos__dicas__item{
     background:white;
-    margin: 0 auto;
-    margin-bottom: 2%;
     border-radius: 5px;
-    width:90%;
-    max-width: 600px;
+    margin: 2% 2%;
+    width:100%;
+    max-width: 480px;
 }
 
 .servicos__dicas__item__subtitulo{
-    text-align: center;
     text-transform: uppercase;
     color: var(--roxinho);
     font-size: 1.65rem;
-    padding:5px;
+    padding:2%;
 }
 
 .servicos__img{
     width: 85%;
+    min-height: 250px;
     max-width: 250px;
 }
 
 .servicos__dicas__item__texto{
     color: var(--preto);
-    padding-bottom: 2%;
+    padding: 2%;
+}
+
+
+/*Rodapé*/
+.rodape{
+    background: var(--preto)
+}
+
+.rodape__texto{
+    font-size: 1.25rem;
+    font-weight: bold;
+    padding: 1%;
+}
+
+.rodape a{
+    font-weight: bold;
+    color: var(--roxinho);
 }
 
 
 /* Breakpoints */
+
+/*TABLET*/
+@media (min-width: 600px){
+.topo__menu__item {
+    font-size: 1.15rem;
+}
+.topo__logo {
+    font-size: 2.1rem;
+}
+.sintomas__titulo {
+    font-size: 3.8rem;
+}
+.sintomas__item__titulo {
+    font-size: 1.55rem;
+}
+.sintomas__item__outros p {
+    font-size: 1.15rem;
+}
+.teste__antes__titulo1 {
+    font-size: 2.6rem;
+}
+.teste__antes__texto1 {
+    font-size: 1.55rem;
+}
+.teste__btn {
+    font-size: 1.4rem;
+}
+.servicos__titulo {
+    font-size: 3.8rem;
+}
+.servicos__cabecalho {
+    font-size: 2.15rem;
+}
+.servicos__dicas__item__subtitulo {
+    font-size: 1.8rem;
+}
+.servicos__dicas__item__texto {
+    font-size: 1.4rem;
+}
+.rodape a {
+    font-size: 1.35rem;
+}
+.rodape__texto {
+    font-size: 1.5rem;
+}
+}
+/*TABLET MAIORES*/
+@media (min-width: 900px){
+    .topo{
+        justify-content:space-between;
+    }
+    .topo__menu{
+        margin-right: 5%;
+    }
+    .topo__menu__item {
+        font-size: 1.3rem;
+        padding-right:20px;
+    }
+    .topo__menu__item:last-child {
+        padding-right:0;
+    }
+    .topo__logo {
+        font-size: 2.4rem;
+        margin-left:5%;
+    }
+    .sintomas__titulo {
+        font-size: 4.1rem;
+    }
+    .sintomas__item__titulo {
+        font-size: 2rem;
+    }
+    .sintomas__item__outros p {
+        font-size: 1.45rem;
+    }
+    .teste__antes__titulo1 {
+        font-size: 3rem;
+    }
+    .teste__antes__texto1 {
+        font-size: 1.8rem;
+    }
+    .teste__btn {
+        font-size: 1.7rem;
+    }
+    .servicos__titulo {
+        font-size: 4rem;
+    }
+    .servicos__cabecalho {
+        font-size: 2.30rem;
+    }
+    .servicos__dicas__item__subtitulo {
+        font-size: 2rem;
+    }
+    .servicos__dicas__item__texto {
+        font-size: 1.65rem;
+    }
+    .rodape a {
+        font-size: 1.45rem;
+    }
+    .rodape__texto {
+        font-size: 2rem;
+    }
+    }
+    
