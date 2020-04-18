@@ -49,6 +49,15 @@ document.getElementById('btnEnviar').addEventListener('click' , function (){
         if(pergunta6 === "Sim"){
             quantidade++
         }
+        let porcentagemInfeccao = parseInt(((quantidade / 6) * 100))
+        let chance = ''
+        if(porcentagemInfeccao <= 33){
+          chance = 'MUITO BAIXA'
+        }else if(porcentagemInfeccao < 66){
+          chance = 'ALTA'
+        }else{
+          chance = 'MUITO ALTA'
+        }
 
         const res1 = document.querySelector('p#res1')
         const res2 = document.querySelector('p#res2')
@@ -57,7 +66,7 @@ document.getElementById('btnEnviar').addEventListener('click' , function (){
         div3.style.display = 'block'
         div2.style.display= 'none'
         res1.innerHTML='Olá meu amigo! Você está enfrentando <span style="font-weight:bold;color:red;">'+ quantidade + '</span> dos 6 principais sintomas do coronavírus.<hr>'
-        res2.innerHTML=(`A sua chance de estar infectado é de: <span style="font-weight:bold;color:red;">${parseInt(((quantidade / 6) *100))}</span>% <hr>`)
+        res2.innerHTML=(`A sua chance de estar infectado é <span style="font-weight:bold;color:red;">${chance}</span> <hr>`)
 })
 
 
