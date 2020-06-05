@@ -1,0 +1,121 @@
+/* Responsividade */
+
+/* Mobile */
+@media screen and (max-width: 580px){
+	.topo{
+	flex-direction: column;
+	}
+}
+@media screen and (min-width: 468px) and (max-width: 768px) {
+	.sintomas__img{
+	width: 140px;
+	}
+	.antes__texto {
+    font-size: 1.2rem;
+	}
+	.teste__btn {
+    padding: 6px 12px;
+	}
+	.teste__resultado p{
+	font-size: 1.2rem;
+	}
+	.resultado__img {
+    width: 365px;
+	}
+	.outros__titulo {
+    font-size: 1.5rem;
+	}
+	.sintomas__outros p {
+    font-size: 1rem;
+	}
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) {
+	.sintomas__img{
+	width: 165px;
+	}
+	.antes__texto {
+    font-size: 1.5rem;
+	}
+	.teste__btn {
+    padding: 9px 17px;
+	}
+	.resultado__refazer{
+	font-size: 1.2rem;
+	}
+	.teste__resultado p{
+	font-size: 1.35rem;
+	}
+	.resultado__img {
+    width: 480px;
+	}
+	.sintomas__titulo {
+    font-size: 1.35rem;
+	}
+	.outros__titulo {
+    font-size: 1.55rem;
+	}
+	.sintomas__outros p {
+    font-size: 1.15rem;
+	}
+}
+
+/* Notebook */
+@media screen and (min-width: 1024px) {
+	.topo__logo {
+    font-size: 1.95rem;
+	}
+	.menu__item {
+	font-size: 1.1rem;
+	}
+	.sintomas{
+	max-width: 980px;
+	display: grid;
+	grid-template-areas: 'titulo titulo'
+						 'principais outros'
+	}
+	.sintomas > h1{
+		grid-area: titulo
+	}
+	.sintomas__principais{
+		grid-area: principais;
+	}
+	.sintomas__item{
+	margin: 0 auto;
+	}
+	.sintomas__item:last-child {
+    padding-bottom: 15px;
+	}
+	.sintomas__titulo {
+    font-size: 1.65rem;
+	}
+	.sintomas__img{
+	width: 165px;
+	}
+	.antes__texto {
+    font-size: 1.7rem;
+	}
+	.teste__btn {
+    padding: 10px 25px;
+	}
+	.sintomas__outros{
+	display: flex;
+	flex-direction: column;
+	margin: 5px 0 0 150px;
+	grid-area: outros;
+	}
+	.outros__titulo{
+	font-size: 1.85rem;
+	}
+	.sintomas__outros p {
+	margin-bottom: 20px;
+    font-size: 1.65rem;
+	}
+	.servicos__dicas{
+		display: grid;
+		width: 960px;
+		margin: 0 auto;
+		grid-template-columns: 480px 480px;
+	}
+}

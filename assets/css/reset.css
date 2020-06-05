@@ -1,0 +1,47 @@
+/* By Ivanilson Junior */
+
+/* Formatação Geral */
+
+:root{
+    --branco: #FFFFFF;
+    --preto: #000000;
+    --cinzinha: #505763;
+    --rosinha: #c822ffff;
+    --vermelho: #ec5252;
+    --vermelho2: #e82828ff;
+    --azulzao: #000852;
+    --aziviszin: #3277d1;
+}
+
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	text-align: center;
+	color: var(--branco);
+	font-family: 'Open Sans', sans-serif;
+}
+
+html{
+    background: var(--vermelho);
+    min-width: 306px;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+.cabecalho{
+    font-family: 'Comfortaa', cursive;
+    font-weight: 700;
+    font-size: 2.5rem;
+    padding: 45px 0 30px 0;
+}
+.bloco{
+    min-width: 320px;
+    margin: 0 auto;
+}

@@ -1,0 +1,257 @@
+/* Topo */
+.topo{
+	position: sticky;
+	top: 0;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+	align-items: center;
+	background: var(--branco);
+}
+
+.topo__logo{
+	font-family: 'Fredoka One', cursive;
+    color:var(--vermelho2);
+    font-size: 1.6rem;
+}
+
+.logo__img{
+    width: 52px;
+    padding: 5px;
+    vertical-align: middle;
+}
+
+.topo__menu{
+    display: inline;
+    padding-bottom: 5px;
+}
+
+.menu__item{
+	color: var(--cinzinha);
+	font-size: 0.9rem;
+	padding: 0 25px 0 0;
+}
+
+.menu__item:hover{
+	color: var(--vermelho2);
+}
+
+.menu__item:last-child{
+	padding: 0
+}
+
+/* Sintomas */
+.sintomas{
+	min-width: 320px;
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+.sintomas__principais{
+	display: flex;
+	justify-content: center;
+	flex-flow: row wrap;
+}
+
+.sintomas__item{
+	margin: 20px auto 40px auto;
+}
+
+.sintomas__img{
+	width: 100px;
+	border-radius: 250px;
+	border: 2px solid var(--branco);
+}
+
+.sintomas__titulo{
+	font-size: 1rem;
+}
+
+.outros__titulo{
+	font-size: 1.35rem;
+	padding-bottom: 30px;
+}
+
+.sintomas__outros p{
+	border: 1px solid var(--branco);
+	background-color: var(--branco);
+	border-radius: 40px;
+	padding: 5px;
+	font-family: 'Comfortaa', cursive;
+	margin: 5px 10px 5px 0;
+	display: inline-block;
+	font-size: 0.85rem;
+	color: var(--preto);
+}
+
+/* Teste */
+.teste{
+	background-color: var(--branco);
+}
+
+.teste__cabecalho{
+    color: var(--preto)
+}
+.antes__titulo{
+	color: var(--preto);
+}
+
+.antes__texto{
+	max-width: 800px;
+	margin: 0 auto;
+	color: var(--preto);
+	line-height: 1.5;
+	font-family: 'Comfortaa', cursive;
+}
+
+.antes__texto--alert{
+	color: var(--vermelho)
+}
+
+.teste__btn{
+	border: none;
+	font-family: 'Fredoka One', cursive;
+	border-radius: 8px;
+	background-color: var(--vermelho);
+	padding: 5px;
+	margin: 10px 0 10px 0
+}
+
+.teste__btn:hover{
+	cursor: pointer;
+	background-color: var(--vermelho2);
+}
+
+/* Teste Depois */
+.teste__depois{
+	display: none;
+}
+
+.depois__titulo{
+	margin-bottom: 15px;
+	color: var(--preto);
+	font-size: 1.7rem;
+}
+
+.formulario__pergunta{
+	width: 95%;
+	height: 160px;
+	max-width: 700px;
+	margin: 0 auto;
+	border-radius: 15px;
+	box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
+}
+
+.pergunta__texto{
+	font-size: 1.2rem;
+	color: var(--preto);
+	font-family: 'Fredoka One', cursive;
+	padding: 50px 0 20px 0;
+}
+.pegunta__erro{
+	display: none;
+	color: red;
+	margin-bottom: 15px;
+}
+.formulario__pergunta label{
+	color: var(--preto);
+	font-size: 1.05rem;
+	font-family: 'Comfortaa', cursive;
+}
+
+.btnResposta{
+	margin-bottom: 10px;
+}
+
+/* Teste Resultado */
+.teste__resultado{
+	max-width: 1024px;
+	margin: 0 auto;
+	display: none;
+}
+
+.resultado__refazer{
+	font-size: 1.4rem;
+}
+
+.resultado__titulo{
+	padding-top: 2px;
+	color: var(--preto)
+}
+
+.teste__resultado p{
+	color: var(--preto);
+	padding-bottom: 5px;
+}
+
+.resultado__img{
+	width: 295px;
+	border-radius: 5px;
+}
+
+/* Serviços */
+.servicos__subtitulo{
+	margin-bottom: 10px;
+	font-size: 2rem;
+	font-family: Arial;
+	background-color: var(--vermelho2)
+}
+
+.dicas__item{
+	background-color: var(--branco);
+	width: 295px;
+	height: 480px;
+	margin: 50px auto;
+	padding: 25px 0;
+	border-radius: 15px;
+	box-shadow: -9px 11px 15px -7px rgba(0,0,0,0.58);
+}
+
+.dicas__item__titulo{
+	background-color: var(--preto);
+	color: var(--branco);
+	padding: 15px 0;
+	margin-bottom: 15px;
+	text-transform: uppercase;
+}
+
+.dicas__item__img{
+	width: 280px;
+	height: 250px;
+}
+
+.dicas__item__texto{
+	width: 75%;
+	margin: 0 auto;
+	color: var(--preto);
+	font-family: 'Comfortaa', cursive;
+}
+
+/* Rodapé */
+.rodape{
+	background: var(--branco);
+	padding-bottom: 5px;
+}
+
+.rodape__icons{
+    font-size: 1.8rem;
+    margin: 25px 0 5px 0;
+}
+.rodape__icons i{
+    color: var(--azulzao);
+    padding:5px;
+    transition: .2s ease;
+    transform: translateY(15%);
+
+}
+.rodape__icons i:hover{
+    color: var(--aziviszin);
+    cursor: pointer;
+    transform:scale(1.2);
+}
+
+.rodape__texto{
+    font-size: 1.2rem;
+    color: var(--preto);
+    font-family: 'Comfortaa', cursive;
+}
