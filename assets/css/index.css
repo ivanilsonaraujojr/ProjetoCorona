@@ -135,7 +135,7 @@
 
 .formulario__pergunta{
 	width: 95%;
-	height: 160px;
+	height: 180px;
 	max-width: 700px;
 	margin: 0 auto;
 	border-radius: 15px;
@@ -160,7 +160,24 @@
 }
 
 .btnResposta{
-	margin-bottom: 10px;
+	display: none;
+}
+.btnResposta + label:hover{
+	cursor: pointer;
+}
+
+.btnResposta + label{
+	margin-left: 10px;
+	border-radius: 5px;
+	padding: 4px;
+	font-family: 'Fredoka One', cursive;
+	color: var(--vermelho);
+	box-shadow: -3px 6px 5px 1px rgba(214,214,214,1);
+}
+
+.btnResposta:checked + label{
+	background: var(--vermelho);
+	color: var(--branco)
 }
 
 /* Teste Resultado */
