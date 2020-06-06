@@ -141,10 +141,12 @@ function calcularResultado(){
     if(porcentagemInfeccao <= 33){
       chance = 'MUITO BAIXA'
     }else if(porcentagemInfeccao < 66){
+      chance = 'BAIXA'
+    }else if(porcentagemInfeccao < 83){
       chance = 'ALTA'
     }else{
       chance = 'MUITO ALTA'
-  } 
+    } 
   areaResposta1.innerHTML='Olá meu amigo! Você está enfrentando <span style="font-weight:bold;color:red;">'+ qtd + '</span> dos 6 principais sintomas do coronavírus.'
   areaResposta2.innerHTML=(`A sua chance de estar infectado é <span style="font-weight:bold;color:red;">${chance}</span> <hr>`)
 }
