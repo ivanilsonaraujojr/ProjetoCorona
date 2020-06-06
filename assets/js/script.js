@@ -15,9 +15,6 @@ const mostrarItem = (item, valor = "block") => item.style.display=valor
 
 //Variaveis formulario
 const perguntas = document.querySelectorAll('.formulario__pergunta')
-const perguntasvalor = [
-    
-]
 const perguntasTexto = document.querySelectorAll(".pergunta__texto")
 const erroParagrafo = document.querySelectorAll('.pegunta__erro')
 const perguntasInputs = document.querySelectorAll(".formulario__pergunta input[type='radio']")
@@ -30,6 +27,14 @@ const botaoProximaPergunta = document.querySelector('#proximaPergunta')
 const botaoPerguntaAnterior = document.querySelector('#perguntaAnterior')
 const areaResposta1 = document.querySelector('#res1')
 const areaResposta2 = document.querySelector('#res2')
+const todosInputs = [
+	document.depois__formulario.formulario__pergunta1,
+	document.depois__formulario.formulario__pergunta2,
+	document.depois__formulario.formulario__pergunta3,
+	document.depois__formulario.formulario__pergunta4,
+	document.depois__formulario.formulario__pergunta5,
+	document.depois__formulario.formulario__pergunta6
+]
 let perguntaAtual = 0
 
 //Resetar os inputs
@@ -104,16 +109,6 @@ function perguntaAnterior(n){
  	perguntaAtual += n;
  	mostrarPergunta(perguntaAtual);
 }
-
-//Todos inputs separados  
-const todosInputs = [
-	document.depois__formulario.formulario__pergunta1,
-	document.depois__formulario.formulario__pergunta2,
-	document.depois__formulario.formulario__pergunta3,
-	document.depois__formulario.formulario__pergunta4,
-	document.depois__formulario.formulario__pergunta5,
-	document.depois__formulario.formulario__pergunta6
-]
 
 //Validação do formulario
 function validarFormulario(valor) {
