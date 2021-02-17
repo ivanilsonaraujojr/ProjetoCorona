@@ -40,8 +40,8 @@ let perguntaAtual = 0
 //Resetar os inputs
 function resetarInputs(){
 	for(let i = 0; i < perguntasInputs.length; i++){
-	perguntasInputs[i].checked = false; 
-}
+		perguntasInputs[i].checked = false;
+	}
 }
 
 //Perguntas com display none atraves de laço repetição
@@ -53,14 +53,14 @@ botaoRefazerTeste.addEventListener("click", function(){
 	esconderItem(testeResultado)
 	mostrarItem(testeAntes)
 	resetarInputs()
-  perguntaAtual = 0
+    perguntaAtual = 0
 })
 
 //Botao voltar
 botaoVoltar.addEventListener("click", function(){
-  for(let i = 0; i < erroParagrafo.length; i++){
-     esconderItem(erroParagrafo[i])
-  }
+	for(let i = 0; i < erroParagrafo.length; i++){
+		esconderItem(erroParagrafo[i])
+	}
 	esconderItem(testeDepois)
 	mostrarItem(testeAntes)
 	resetarInputs()
@@ -70,44 +70,45 @@ function mostrarPergunta(perguntaAtual) {
 	esconderItem(testeAntes)
 	mostrarItem(testeDepois)
 
-  	mostrarItem(perguntas[perguntaAtual])
+	mostrarItem(perguntas[perguntaAtual])
 
-  	if (perguntaAtual == 0) {
-  	esconderItem(botaoPerguntaAnterior)
-  	mostrarItem(botaoVoltar, "inline")
-  } else {
-  	mostrarItem(botaoPerguntaAnterior, "inline")
-  	mostrarItem(botaoProximaPergunta, "inline")
-  	esconderItem(botaoVoltar)
-  }
-  	if (perguntaAtual == (perguntas.length - 1)) {	
-    botaoProximaPergunta.value = "Enviar as respostas";
-  } else{
-  	botaoProximaPergunta.value = "Proxima pergunta";
-  }
+	if (perguntaAtual == 0) {
+		esconderItem(botaoPerguntaAnterior)
+		mostrarItem(botaoVoltar, "inline")
+	} else {
+		mostrarItem(botaoPerguntaAnterior, "inline")
+		mostrarItem(botaoProximaPergunta, "inline")
+		esconderItem(botaoVoltar)
+	}
+		if (perguntaAtual == (perguntas.length - 1)) {
+		botaoProximaPergunta.value = "Enviar as respostas";
+	} else{
+		botaoProximaPergunta.value = "Proxima pergunta";
+	}
 }
 
 //Função do botão proxima pergunta
 function perguntaSeguinte(n) {
- 	if(validarFormulario(perguntaAtual)){
- 	esconderItem(perguntas[perguntaAtual])
-  	perguntaAtual += n;
-  }
-  	if (perguntaAtual >= perguntas.length) {
-  	//Resultado entra aqui
-  	esconderItem(testeDepois)
-    calcularResultado()
-  	mostrarItem(testeResultado)
-    return false;
-  }
-  	mostrarPergunta(perguntaAtual);
+	if(validarFormulario(perguntaAtual)){
+		esconderItem(perguntas[perguntaAtual])
+		perguntaAtual += n;
+	}
+	if (perguntaAtual >= perguntas.length) {
+  		//Resultado entra aqui
+		esconderItem(testeDepois)
+		calcularResultado()
+		mostrarItem(testeResultado)
+    
+		return false;
+	}
+	mostrarPergunta(perguntaAtual);
 }
 
 //Função do botão pergunta anterior
 function perguntaAnterior(n){
- 	esconderItem(perguntas[perguntaAtual])
- 	perguntaAtual += n;
- 	mostrarPergunta(perguntaAtual);
+	esconderItem(perguntas[perguntaAtual])
+	perguntaAtual += n;
+	mostrarPergunta(perguntaAtual);
 }
 
 //Validação do formulario
@@ -117,31 +118,31 @@ function validarFormulario(valor) {
     let formularioValido = true;
     esconderItem(erroParagrafo[valor])
     if(!inputsRadios[0].checked && !inputsRadios[1].checked){
-    	formularioValido = false;
-    	mostrarItem(erroParagrafo[valor], "block")
+		formularioValido = false;
+		mostrarItem(erroParagrafo[valor], "block")
     }
     return formularioValido;
 }
 
 //Função resposavel pelo resultado do teste
 function calcularResultado(){
-  let qtd = 0
-  let chance = ''
-  for(let i = 0; i < todosInputs.length; i++){
+	let qtd = 0
+	let chance = ''
+	for(let i = 0; i < todosInputs.length; i++){
     if(todosInputs[i].value == "Sim"){
-      qtd++
+		qtd++
     } 
-  }
+}
   let porcentagemInfeccao = parseInt(((qtd / 6) * 100))
     if(porcentagemInfeccao <= 33){
-      chance = 'MUITO BAIXA'
+		chance = 'MUITO BAIXA'
     }else if(porcentagemInfeccao < 66){
-      chance = 'BAIXA'
+		chance = 'BAIXA'
     }else if(porcentagemInfeccao < 83){
-      chance = 'ALTA'
+		chance = 'ALTA'
     }else{
-      chance = 'MUITO ALTA'
+		chance = 'MUITO ALTA'
     } 
-  areaResposta1.innerHTML='Olá meu amigo! Você está enfrentando <span style="font-weight:bold;color:red;">'+ qtd + '</span> dos 6 principais sintomas do coronavírus.'
-  areaResposta2.innerHTML=(`A sua chance de estar infectado é <span style="font-weight:bold;color:red;">${chance}</span> <hr>`)
+	areaResposta1.innerHTML='Olá meu amigo! Você está enfrentando <span style="font-weight:bold;color:red;">'+ qtd + '</span> dos 6 principais sintomas do coronavírus.'
+	areaResposta2.innerHTML=(`A sua chance de estar infectado é <span style="font-weight:bold;color:red;">${chance}</span> <hr>`)
 }

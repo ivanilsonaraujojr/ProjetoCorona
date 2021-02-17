@@ -14,7 +14,7 @@ function irParaPosicaoNoClick(evento) {
 //Atribue mscroll suave para todos links do elemento chamado
 function atribuirEfeitoScroll(arr) {
 	for(let i = 0; i < arr.length; i++){
-	 arr[i].addEventListener('click', irParaPosicaoNoClick);
+    arr[i].addEventListener('click', irParaPosicaoNoClick);
 	}
 }
 
